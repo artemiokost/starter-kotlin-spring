@@ -1,0 +1,9 @@
+spring:
+#  flyway:
+#    url: jdbc:postgresql://localhost:5432/core
+#    user: core
+#    password: core
+#  r2dbc:
+#    url: r2dbc:postgresql://localhost:5432/core
+#    username: core
+#    password: core
