@@ -8,8 +8,8 @@ plugins {
 }
 
 dependencies {
+    implementation(libs.bundles.kotlin)
     implementation(libs.bundles.logger)
-    implementation(libs.bundles.common.persist)
 }
 
 repositories {

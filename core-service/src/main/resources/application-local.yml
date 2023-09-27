@@ -1,4 +1,8 @@
 spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/starter
+    username: starter
+    password: starter
 #  flyway:
 #    url: jdbc:postgresql://localhost:5432/core
 #    user: core

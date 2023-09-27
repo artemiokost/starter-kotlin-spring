@@ -8,24 +8,30 @@ spring:
     location: banner/nyan.txt
   codec:
     max-in-memory-size: 5MB
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}:5432/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  jpa:
+    open-in-view: false
+    generate-ddl: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+  main:
+    web-application-type: SERVLET
 #  flyway:
 #    enabled: true
 #    locations: classpath:/flyway
 #    url: jdbc:postgresql://${DB_HOST}:5432/${DB_NAME}
 #    user: ${DB_USER}
 #    password: ${DB_PASSWORD}
-#  jpa:
-#    open-in-view: false
-#    generate-ddl: false
-#    database-platform: org.hibernate.dialect.PostgreSQLDialect
-#    hibernate:
-#      ddl-auto: validate
 #  r2dbc:
 #    url: r2dbc:postgresql://${DB_HOST}:5432/${DB_NAME}
 #    username: ${DB_USER}
 #    password: ${DB_PASSWORD}
-  main:
-    web-application-type: REACTIVE
+#  main:
+#    web-application-type: REACTIVE
 
 springdoc:
   swagger-ui:

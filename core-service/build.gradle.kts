@@ -16,7 +16,7 @@ dependencies {
     annotationProcessor(libs.spring.boot.configuration.processor)
 
     implementation(libs.bundles.ui)
-    implementation(libs.h2)
+    implementation(libs.postgresql)
     implementation(platform(libs.spring.cloud.dependencies))
 }
 

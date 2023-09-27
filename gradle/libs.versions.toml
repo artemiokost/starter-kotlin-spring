@@ -6,10 +6,7 @@ jackson = "2.15.2"
 koin = "3.5.0"
 kotlin = "1.9.10"
 kotlin-logging = "3.0.5"
-lombok = "1.18.28"
 netty = "4.1.96.Final"
-openrtb-model = "1.4"
-openrtb3-converter = "1.0.5"
 postgresql = "42.6.0"
 postgresql-r2dbc = "1.0.2.RELEASE"
 slf4j = "2.0.7"
@@ -25,17 +22,15 @@ jackson-datatype-joda = { group = "com.fasterxml.jackson.datatype", name = "jack
 jackson-module-kotlin = { group = "com.fasterxml.jackson.module", name = "jackson-module-kotlin", version.ref = "jackson" }
 koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
 kotlin-logging-jvm = { group = "io.github.microutils", name = "kotlin-logging-jvm", version.ref = "kotlin-logging" }
-lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
 netty-resolver-dns-native-macos = { group = "io.netty", name = "netty-resolver-dns-native-macos", version.ref = "netty" }
 netty-transport-native-epoll = { group = "io.netty", name = "netty-transport-native-epoll", version.ref = "netty" }
-openrtb-model = { group = "net.media", name = "openrtb-model", version.ref = "openrtb-model" }
-openrtb3-converter-core = { group = "net.media", name = "openrtb3-converter-core", version.ref = "openrtb3-converter" }
 postgresql = { group = "org.postgresql", name = "postgresql", version.ref = "postgresql" }
 postgresql-r2dbc = { group = "org.postgresql", name = "r2dbc-postgresql", version.ref = "postgresql-r2dbc" }
 slf4j-api = { group = "org.slf4j", name = "slf4j-api", version.ref = "slf4j" }
 slf4j-log4j12 = { group = "org.slf4j", name = "slf4j-log4j12", version.ref = "slf4j" }
 springdoc-openapi-starter-common = { group = "org.springdoc", name = "springdoc-openapi-starter-common", version.ref = "spring-doc" }
 springdoc-openapi-starter-webflux-ui = { group = "org.springdoc", name = "springdoc-openapi-starter-webflux-ui", version.ref = "spring-doc" }
+springdoc-openapi-starter-webmvc-ui = { group = "org.springdoc", name = "springdoc-openapi-starter-webmvc-ui", version.ref = "spring-doc" }
 spring-boot-configuration-processor = { group = "org.springframework.boot", name = "spring-boot-configuration-processor", version.ref = "spring-boot" }
 spring-boot-starter-actuator = { group = "org.springframework.boot", name = "spring-boot-starter-actuator", version.ref = "spring-boot" }
 spring-boot-starter-cache = { group = "org.springframework.boot", name = "spring-boot-starter-cache", version.ref = "spring-boot" }
@@ -43,6 +38,7 @@ spring-boot-starter-data-jpa = { group = "org.springframework.boot", name = "spr
 spring-boot-starter-data-r2dbc = { group = "org.springframework.boot", name = "spring-boot-starter-data-r2dbc", version.ref = "spring-boot" }
 spring-boot-starter-security = { group = "org.springframework.boot", name = "spring-boot-starter-security", version.ref = "spring-boot" }
 spring-boot-starter-validation = { group = "org.springframework.boot", name = "spring-boot-starter-validation", version.ref = "spring-boot" }
+spring-boot-starter-web = { group = "org.springframework.boot", name = "spring-boot-starter-web", version.ref = "spring-boot" }
 spring-boot-starter-webflux = { group = "org.springframework.boot", name = "spring-boot-starter-webflux", version.ref = "spring-boot" }
 spring-cloud-dependencies = { group = "org.springframework.cloud", name = "spring-cloud-dependencies", version.ref = "spring-cloud" }
 vertx-codegen = { group = "io.vertx", name = "vertx-codegen", version.ref = "vertx" }
@@ -59,30 +55,23 @@ vertx-web-openapi = { group = "io.vertx", name = "vertx-web-openapi", version.re
 bidder = [
     "koin-core"
 ]
+kotlin = [
+    "jackson-module-kotlin",
+    "kotlin-logging-jvm"
+]
 logger = [
-    "kotlin-logging-jvm",
     "slf4j-api",
     "slf4j-log4j12"
 ]
-common-persist = [
-    "spring-boot-starter-data-jpa",
-    "spring-boot-starter-security"
-]
-postgresql = [
-    "postgresql",
-    "postgresql-r2dbc"
-]
 ui = [
-    "jackson-module-kotlin",
-    "kotlin-logging-jvm",
     "springdoc-openapi-starter-common",
-    "springdoc-openapi-starter-webflux-ui",
+    "springdoc-openapi-starter-webmvc-ui",
     "spring-boot-starter-actuator",
     "spring-boot-starter-cache",
     "spring-boot-starter-data-jpa",
     "spring-boot-starter-security",
     "spring-boot-starter-validation",
-    "spring-boot-starter-webflux"
+    "spring-boot-starter-web"
 ]
 vertx = [
     "vertx-config",
