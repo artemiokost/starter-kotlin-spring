@@ -6,7 +6,6 @@ version = "0.0.1"
 plugins {
     alias(libs.plugins.flyway) apply true
     alias(libs.plugins.kotlin) apply true
-    alias(libs.plugins.kotlin.jpa) apply true
     alias(libs.plugins.kotlin.spring) apply true
     alias(libs.plugins.spring.boot) apply true
 }
