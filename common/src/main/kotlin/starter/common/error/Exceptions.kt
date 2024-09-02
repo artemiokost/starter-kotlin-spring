@@ -13,41 +13,6 @@ class SomethingWentWrongException(description: String? = null) : BasicException(
     description
 )
 
-class ContestNotFoundException : BasicException(
-    HttpStatus.NOT_FOUND,
-    "Contest not found"
-)
-
-class ContestResultNotFoundException : BasicException(
-    HttpStatus.NOT_FOUND,
-    "Contest result not found"
-)
-
-class OrderNotException : BasicException(
-    HttpStatus.NOT_FOUND,
-    "Order not found"
-)
-
-class PostbackValidationException : BasicException(
-    HttpStatus.BAD_REQUEST,
-    "Postback validation error"
-)
-
-class RoomValidationException(info: String) : BasicException(
-    HttpStatus.NOT_FOUND,
-    "Room validation: $info"
-)
-
-class RoomNotFoundException : BasicException(
-    HttpStatus.NOT_FOUND,
-    "Room not found"
-)
-
-class SessionValidationException : BasicException(
-    HttpStatus.BAD_REQUEST,
-    "Session validation error"
-)
-
 class UnauthorizedException(
     override val description: String? = null
 ) : BasicException(
