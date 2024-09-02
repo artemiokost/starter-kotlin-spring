@@ -1,91 +1,70 @@
 [versions]
-flyway = "9.22.1"
-gradle = "8.3"
-h2 = "2.2.224"
-jackson = "2.15.2"
-koin = "3.5.0"
-kotlin = "1.9.10"
+flyway = "10.17.2"
+gradle = "8.10"
+jackson = "2.17.2"
+kotlin = "2.0.20"
 kotlin-logging = "3.0.5"
-netty = "4.1.96.Final"
-postgresql = "42.6.0"
-postgresql-r2dbc = "1.0.2.RELEASE"
-slf4j = "2.0.7"
-shadow = "8.1.1"
-spring-boot = "3.1.3"
-spring-cloud = "2022.0.4"
-spring-doc = "2.2.0"
-vertx = "4.4.5"
+kotlinx = "1.8.1"
+netty = "4.1.112.Final"
+postgresql = "42.7.3"
+postgresql-r2dbc = "1.0.5.RELEASE"
+spring-boot = "3.3.3"
+spring-cloud = "2023.0.3"
+spring-doc = "2.6.0"
+telegram-bot-api = "7.9.1"
 
 [libraries]
-h2 = { group = "com.h2database", name = "h2", version.ref = "h2" }
-jackson-datatype-joda = { group = "com.fasterxml.jackson.datatype", name = "jackson-datatype-joda", version.ref = "jackson" }
+flyway-core = { group = "org.flywaydb", name = "flyway-core", version.ref = "flyway" }
+flyway-database-postgresql = { group = "org.flywaydb", name = "flyway-database-postgresql", version.ref = "flyway" }
 jackson-module-kotlin = { group = "com.fasterxml.jackson.module", name = "jackson-module-kotlin", version.ref = "jackson" }
-koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
 kotlin-logging-jvm = { group = "io.github.microutils", name = "kotlin-logging-jvm", version.ref = "kotlin-logging" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx" }
+kotlinx-coroutines-reactor = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-reactor", version.ref = "kotlinx" }
 netty-resolver-dns-native-macos = { group = "io.netty", name = "netty-resolver-dns-native-macos", version.ref = "netty" }
 netty-transport-native-epoll = { group = "io.netty", name = "netty-transport-native-epoll", version.ref = "netty" }
 postgresql = { group = "org.postgresql", name = "postgresql", version.ref = "postgresql" }
 postgresql-r2dbc = { group = "org.postgresql", name = "r2dbc-postgresql", version.ref = "postgresql-r2dbc" }
-slf4j-api = { group = "org.slf4j", name = "slf4j-api", version.ref = "slf4j" }
-slf4j-log4j12 = { group = "org.slf4j", name = "slf4j-log4j12", version.ref = "slf4j" }
+nimbus-jose-jwt = { group = "com.nimbusds", name = "nimbus-jose-jwt", version = "9.40" }
 springdoc-openapi-starter-common = { group = "org.springdoc", name = "springdoc-openapi-starter-common", version.ref = "spring-doc" }
 springdoc-openapi-starter-webflux-ui = { group = "org.springdoc", name = "springdoc-openapi-starter-webflux-ui", version.ref = "spring-doc" }
-springdoc-openapi-starter-webmvc-ui = { group = "org.springdoc", name = "springdoc-openapi-starter-webmvc-ui", version.ref = "spring-doc" }
 spring-boot-configuration-processor = { group = "org.springframework.boot", name = "spring-boot-configuration-processor", version.ref = "spring-boot" }
 spring-boot-starter-actuator = { group = "org.springframework.boot", name = "spring-boot-starter-actuator", version.ref = "spring-boot" }
 spring-boot-starter-cache = { group = "org.springframework.boot", name = "spring-boot-starter-cache", version.ref = "spring-boot" }
-spring-boot-starter-data-jpa = { group = "org.springframework.boot", name = "spring-boot-starter-data-jpa", version.ref = "spring-boot" }
 spring-boot-starter-data-r2dbc = { group = "org.springframework.boot", name = "spring-boot-starter-data-r2dbc", version.ref = "spring-boot" }
 spring-boot-starter-security = { group = "org.springframework.boot", name = "spring-boot-starter-security", version.ref = "spring-boot" }
 spring-boot-starter-validation = { group = "org.springframework.boot", name = "spring-boot-starter-validation", version.ref = "spring-boot" }
-spring-boot-starter-web = { group = "org.springframework.boot", name = "spring-boot-starter-web", version.ref = "spring-boot" }
 spring-boot-starter-webflux = { group = "org.springframework.boot", name = "spring-boot-starter-webflux", version.ref = "spring-boot" }
 spring-cloud-dependencies = { group = "org.springframework.cloud", name = "spring-cloud-dependencies", version.ref = "spring-cloud" }
-vertx-codegen = { group = "io.vertx", name = "vertx-codegen", version.ref = "vertx" }
-vertx-rx-java3-gen = { group = "io.vertx", name = "vertx-rx-java3-gen", version.ref = "vertx" }
-vertx-config = { group = "io.vertx", name = "vertx-config", version.ref = "vertx" }
-vertx-core = { group = "io.vertx", name = "vertx-core", version.ref = "vertx" }
-vertx-rx-java3 = { group = "io.vertx", name = "vertx-rx-java3", version.ref = "vertx" }
-vertx-service-discovery = { group = "io.vertx", name = "vertx-service-discovery", version.ref = "vertx" }
-vertx-service-proxy = { group = "io.vertx", name = "vertx-service-proxy", version.ref = "vertx" }
-vertx-web = { group = "io.vertx", name = "vertx-web", version.ref = "vertx" }
-vertx-web-openapi = { group = "io.vertx", name = "vertx-web-openapi", version.ref = "vertx" }
+spring-cloud-resilience4j = { group = "org.springframework.cloud", name = "spring-cloud-starter-circuitbreaker-reactor-resilience4j" }
+telegram-bot-api = { group = "com.github.pengrad", name = "java-telegram-bot-api", version.ref = "telegram-bot-api" }
 
 [bundles]
-bidder = [
-    "koin-core"
+common = [
+    "spring-boot-starter-security",
+    "spring-boot-starter-data-r2dbc"
+]
+core = [
+    "flyway-core",
+    "flyway-database-postgresql",
+    "nimbus-jose-jwt",
+    "netty-resolver-dns-native-macos",
+    "netty-transport-native-epoll",
+    "postgresql",
+    "postgresql-r2dbc",
+    "springdoc-openapi-starter-common",
+    "springdoc-openapi-starter-webflux-ui",
+    "spring-boot-starter-actuator",
+    "spring-boot-starter-data-r2dbc",
+    "spring-boot-starter-security",
+    "spring-boot-starter-validation",
+    "spring-boot-starter-webflux",
+    "telegram-bot-api"
 ]
 kotlin = [
     "jackson-module-kotlin",
-    "kotlin-logging-jvm"
-]
-logger = [
-    "slf4j-api",
-    "slf4j-log4j12"
-]
-ui = [
-    "springdoc-openapi-starter-common",
-    "springdoc-openapi-starter-webmvc-ui",
-    "spring-boot-starter-actuator",
-    "spring-boot-starter-cache",
-    "spring-boot-starter-data-jpa",
-    "spring-boot-starter-security",
-    "spring-boot-starter-validation",
-    "spring-boot-starter-web"
-]
-vertx = [
-    "vertx-config",
-    "vertx-core",
-    "vertx-rx-java3",
-    "vertx-service-discovery",
-    "vertx-service-proxy",
-    "vertx-web",
-    "vertx-web-openapi"
-]
-vertx-codegen = [
-    "vertx-codegen",
-    "vertx-rx-java3-gen",
-    "vertx-service-proxy"
+    "kotlin-logging-jvm",
+    "kotlinx-coroutines-core",
+    "kotlinx-coroutines-reactor"
 ]
 
 [plugins]
@@ -93,5 +72,4 @@ flyway = { id = "org.flywaydb.flyway", version.ref = "flyway" }
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version.ref = "kotlin" }
 kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
-shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadow" }
 spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }

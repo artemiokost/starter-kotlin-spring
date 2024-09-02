@@ -1,4 +1,4 @@
-package core
+package starter.core
 
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeIn
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType
@@ -7,14 +7,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.scheduling.annotation.EnableScheduling
 
-@SpringBootApplication
+@EnableScheduling
 @SecurityScheme(
     name = "Core Application",
     scheme = "bearer",
     type = SecuritySchemeType.HTTP,
     `in` = SecuritySchemeIn.HEADER
 )
-@EnableScheduling
+@SpringBootApplication
 class CoreApplication
 
 fun main(args: Array<String>) {

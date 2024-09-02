@@ -1,7 +1,6 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.springframework.boot.gradle.tasks.bundling.BootJar
 
-group = "core"
+group = "starter.core"
 version = "0.0.1"
 
 plugins {
@@ -12,27 +11,32 @@ plugins {
     alias(libs.plugins.spring.boot) apply true
 }
 
-dependencies {
-    annotationProcessor(libs.spring.boot.configuration.processor)
-
-    implementation(libs.bundles.ui)
-    implementation(libs.postgresql)
-    implementation(platform(libs.spring.cloud.dependencies))
-}
-
 repositories {
     mavenCentral()
 }
 
+dependencies {
+    annotationProcessor(libs.spring.boot.configuration.processor)
+
+    implementation(libs.bundles.core)
+    implementation(libs.bundles.kotlin)
+    implementation(libs.netty.resolver.dns.native.macos) {
+        artifact { classifier = "osx-aarch_64" }
+    }
+    implementation(platform(libs.spring.cloud.dependencies))
+    implementation(project(":common"))
+}
+
+kotlin {
+    compilerOptions {
+        freeCompilerArgs.addAll("-Xjsr305=strict")
+    }
+    jvmToolchain(21)
+}
+
 tasks {
     withType<BootJar> {
-        archiveFileName.set("ui-service.jar")
-    }
-    withType<KotlinCompile> {
-        kotlinOptions {
-            freeCompilerArgs = listOf("-Xjsr305=strict")
-            jvmTarget = "20"
-        }
+        archiveFileName.set("core-service.jar")
     }
     withType<Wrapper> {
         gradleVersion = libs.versions.gradle.get()

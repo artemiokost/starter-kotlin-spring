@@ -1,13 +1,9 @@
 spring:
-  datasource:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/starter
+    username: postgres
+    password: postgres
+  flyway:
     url: jdbc:postgresql://localhost:5432/starter
-    username: starter
-    password: starter
-#  flyway:
-#    url: jdbc:postgresql://localhost:5432/core
-#    user: core
-#    password: core
-#  r2dbc:
-#    url: r2dbc:postgresql://localhost:5432/core
-#    username: core
-#    password: core
+    user: postgres
+    password: postgres

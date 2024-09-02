@@ -1,5 +1,5 @@
 server:
-  port: ${PORT:8080}
+  port: ${PORT:8801}
 
 spring:
   application:
@@ -8,10 +8,15 @@ spring:
     location: banner/nyan.txt
   codec:
     max-in-memory-size: 5MB
-  datasource:
-    url: jdbc:postgresql://${DB_HOST}:5432/${DB_NAME}
+  r2dbc:
+    url: r2dbc:postgresql://${DB_HOST}:5432/${DB_NAME}
     username: ${DB_USER}
     password: ${DB_PASSWORD}
+  flyway:
+    url: jdbc:postgresql://${DB_HOST}:5432/${DB_NAME}
+    user: ${DB_USER}
+    password: ${DB_PASSWORD}
+    locations: classpath:/flyway
   jpa:
     open-in-view: false
     generate-ddl: false
@@ -19,20 +24,20 @@ spring:
     hibernate:
       ddl-auto: validate
   main:
-    web-application-type: SERVLET
-#  flyway:
-#    enabled: true
-#    locations: classpath:/flyway
-#    url: jdbc:postgresql://${DB_HOST}:5432/${DB_NAME}
-#    user: ${DB_USER}
-#    password: ${DB_PASSWORD}
-#  r2dbc:
-#    url: r2dbc:postgresql://${DB_HOST}:5432/${DB_NAME}
-#    username: ${DB_USER}
-#    password: ${DB_PASSWORD}
-#  main:
-#    web-application-type: REACTIVE
+    web-application-type: REACTIVE
 
 springdoc:
   swagger-ui:
     path: /docs/swagger-ui.html
+
+app:
+  jwt:
+    ttl: 40000
+    issuer: https://starter.io
+    private-key: jwt/private.pk
+    public-key: jwt/public.key
+  telegram:
+    enable: false
+    token: "1234:ABCD"
+    chatId: "1234"
+    pingDevs: "@artemKostritsa"
