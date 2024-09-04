@@ -17,12 +17,6 @@ spring:
     user: ${DB_USER}
     password: ${DB_PASSWORD}
     locations: classpath:/flyway
-  jpa:
-    open-in-view: false
-    generate-ddl: false
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    hibernate:
-      ddl-auto: validate
   main:
     web-application-type: REACTIVE
 
