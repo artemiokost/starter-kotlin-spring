@@ -1,25 +1,29 @@
 [versions]
-flyway = "10.17.2"
-gradle = "8.10"
-jackson = "2.17.2"
-kotlin = "2.0.20"
+flyway = "11.0.1"
+gradle = "8.11.1"
+gson = "2.11.0"
+jackson = "2.18.2"
+kotlin = "2.1.0"
 kotlin-logging = "3.0.5"
-kotlinx = "1.8.1"
-netty = "4.1.112.Final"
-postgresql = "42.7.3"
-postgresql-r2dbc = "1.0.5.RELEASE"
-spring-boot = "3.3.3"
-spring-cloud = "2023.0.3"
-spring-doc = "2.6.0"
-telegram-bot-api = "7.9.1"
+kotlinx = "1.9.0"
+netty = "4.1.115.Final"
+netty-http3 = "0.0.28.Final"
+postgresql = "42.7.4"
+postgresql-r2dbc = "1.0.7.RELEASE"
+spring-boot = "3.4.0"
+spring-cloud = "2024.0.0"
+spring-doc = "2.7.0"
+telegram-bot-api = "7.11.0"
 
 [libraries]
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 flyway-core = { group = "org.flywaydb", name = "flyway-core", version.ref = "flyway" }
 flyway-database-postgresql = { group = "org.flywaydb", name = "flyway-database-postgresql", version.ref = "flyway" }
 jackson-module-kotlin = { group = "com.fasterxml.jackson.module", name = "jackson-module-kotlin", version.ref = "jackson" }
 kotlin-logging-jvm = { group = "io.github.microutils", name = "kotlin-logging-jvm", version.ref = "kotlin-logging" }
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx" }
 kotlinx-coroutines-reactor = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-reactor", version.ref = "kotlinx" }
+netty-incubator-codec-http3 = { group = "io.netty.incubator", name = "netty-incubator-codec-http3", version.ref = "netty-http3" }
 netty-resolver-dns-native-macos = { group = "io.netty", name = "netty-resolver-dns-native-macos", version.ref = "netty" }
 netty-transport-native-epoll = { group = "io.netty", name = "netty-transport-native-epoll", version.ref = "netty" }
 postgresql = { group = "org.postgresql", name = "postgresql", version.ref = "postgresql" }
@@ -44,9 +48,11 @@ common = [
     "spring-boot-starter-data-r2dbc"
 ]
 core = [
+    "gson",
     "flyway-core",
     "flyway-database-postgresql",
     "nimbus-jose-jwt",
+    "netty-incubator-codec-http3",
     "netty-resolver-dns-native-macos",
     "netty-transport-native-epoll",
     "postgresql",

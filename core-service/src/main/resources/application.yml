@@ -19,6 +19,15 @@ spring:
     locations: classpath:/flyway
   main:
     web-application-type: REACTIVE
+  ssl:
+    bundle:
+      jks:
+        server-http3:
+          key:
+            alias: http3
+          keystore:
+            location: classpath:/jks/http3.jks
+            password: superPass
 
 springdoc:
   swagger-ui:
@@ -30,6 +39,8 @@ app:
     issuer: https://starter.io
     private-key: jwt/private.pk
     public-key: jwt/public.key
+  http3:
+    enabled: false
   telegram:
     enable: false
     token: "1234:ABCD"

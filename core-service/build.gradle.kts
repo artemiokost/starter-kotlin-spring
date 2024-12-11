@@ -30,7 +30,7 @@ kotlin {
     compilerOptions {
         freeCompilerArgs.addAll("-Xjsr305=strict")
     }
-    jvmToolchain(21)
+    jvmToolchain(23)
 }
 
 tasks {
