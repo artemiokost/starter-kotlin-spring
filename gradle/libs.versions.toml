@@ -1,19 +1,19 @@
 [versions]
-flyway = "11.0.1"
-gradle = "8.11.1"
+flyway = "11.3.2"
+gradle = "8.12.1"
 gson = "2.11.0"
 jackson = "2.18.2"
-kotlin = "2.1.0"
+kotlin = "2.1.10"
 kotlin-logging = "3.0.5"
-kotlinx = "1.9.0"
-netty = "4.1.115.Final"
+kotlinx = "1.10.1"
+netty = "4.1.118.Final"
 netty-http3 = "0.0.28.Final"
-postgresql = "42.7.4"
+postgresql = "42.7.5"
 postgresql-r2dbc = "1.0.7.RELEASE"
-spring-boot = "3.4.0"
+spring-boot = "3.4.2"
 spring-cloud = "2024.0.0"
-spring-doc = "2.7.0"
-telegram-bot-api = "7.11.0"
+spring-doc = "2.8.5"
+telegram-bot-api = "8.1.0"
 
 [libraries]
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }

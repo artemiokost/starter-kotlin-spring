@@ -41,3 +41,13 @@ tasks {
         gradleVersion = libs.versions.gradle.get()
     }
 }
+
+tasks.register("wrapperUpdate") {
+    group = "build setup"
+    doLast {
+        exec {
+            workingDir = project.rootDir
+            commandLine("./gradlew", "wrapper", "--gradle-version", libs.versions.gradle.get())
+        }
+    }
+}
