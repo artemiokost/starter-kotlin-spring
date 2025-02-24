@@ -24,6 +24,8 @@ dependencies {
     }
     implementation(platform(libs.spring.cloud.dependencies))
     implementation(project(":common"))
+
+    testImplementation(libs.bundles.test)
 }
 
 kotlin {
@@ -36,6 +38,9 @@ kotlin {
 tasks {
     withType<BootJar> {
         archiveFileName.set("core-service.jar")
+    }
+    withType<Test> {
+        useJUnitPlatform()
     }
     withType<Wrapper> {
         gradleVersion = libs.versions.gradle.get()

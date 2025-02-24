@@ -3,9 +3,13 @@ flyway = "11.3.2"
 gradle = "8.12.1"
 gson = "2.11.0"
 jackson = "2.18.2"
+junit = "5.12.0"
+junit-platform = "1.12.0"
 kotlin = "2.1.10"
 kotlin-logging = "3.0.5"
 kotlinx = "1.10.1"
+mockito-kotlin = "5.4.0"
+mockito = "5.15.2"
 netty = "4.1.118.Final"
 netty-http3 = "0.0.28.Final"
 postgresql = "42.7.5"
@@ -20,9 +24,15 @@ gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 flyway-core = { group = "org.flywaydb", name = "flyway-core", version.ref = "flyway" }
 flyway-database-postgresql = { group = "org.flywaydb", name = "flyway-database-postgresql", version.ref = "flyway" }
 jackson-module-kotlin = { group = "com.fasterxml.jackson.module", name = "jackson-module-kotlin", version.ref = "jackson" }
+junit-jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit" }
+junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit-platform" }
+junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher", version.ref = "junit-platform" }
+junit-jupiter-params = { group = "org.junit.jupiter", name = "junit-jupiter-params", version.ref = "junit" }
 kotlin-logging-jvm = { group = "io.github.microutils", name = "kotlin-logging-jvm", version.ref = "kotlin-logging" }
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx" }
 kotlinx-coroutines-reactor = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-reactor", version.ref = "kotlinx" }
+mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
+mockito-kotlin = { group = "org.mockito.kotlin", name = "mockito-kotlin", version.ref = "mockito-kotlin" }
 netty-incubator-codec-http3 = { group = "io.netty.incubator", name = "netty-incubator-codec-http3", version.ref = "netty-http3" }
 netty-resolver-dns-native-macos = { group = "io.netty", name = "netty-resolver-dns-native-macos", version.ref = "netty" }
 netty-transport-native-epoll = { group = "io.netty", name = "netty-transport-native-epoll", version.ref = "netty" }
@@ -71,6 +81,14 @@ kotlin = [
     "kotlin-logging-jvm",
     "kotlinx-coroutines-core",
     "kotlinx-coroutines-reactor"
+]
+test = [
+    "junit-jupiter-api",
+    "junit-jupiter-engine",
+    "junit-platform-launcher",
+    "junit-jupiter-params",
+    "mockito-core",
+    "mockito-kotlin"
 ]
 
 [plugins]
